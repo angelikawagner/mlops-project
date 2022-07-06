@@ -1,0 +1,18 @@
+name: tsla_bot
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - loguru=0.6.0
+  - matplotlib=3.2.2
+  - numpy=1.23.0
+  - pandas=1.4.3
+  - pip=22.1.2
+  - praw=7.6.0
+  - python=3.8.13
+  - pip:
+    - pydantic==1.9.1
+    - pydantic[dotenv]
+    - pytorch-pretrained-bert
+    - streamlit==1.10.0
+    - transformers==4.20.1
