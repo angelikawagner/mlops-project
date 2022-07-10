@@ -1,5 +1,5 @@
 import praw
-from sentimentbot.config import settings
+from config.config import settings
 from praw.models import MoreComments
 from loguru import logger
 
