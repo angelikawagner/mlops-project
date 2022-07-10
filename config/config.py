@@ -1,4 +1,7 @@
 from pathlib import Path
+from pydantic import (
+    BaseSettings
+)
 
 # Directories
 BASE_DIR = Path(__file__).parent.parent.absolute()
@@ -9,19 +12,7 @@ APP_DIR = Path(BASE_DIR, "TSLA-Streamlit")
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 APP_DIR.mkdir(parents=True, exist_ok=True)
  
-##
-from typing import Set
-
-from pydantic import (
-    BaseModel,
-    BaseSettings,
-    RedisDsn,
-    PostgresDsn,
-    AmqpDsn,
-    Field,
-)
-
-
+# Load creds
 class Settings(BaseSettings):
 
     reddit_api_client_id: str
@@ -30,7 +21,6 @@ class Settings(BaseSettings):
     reddit_api_user_agent: str = "USERAGENT"
     model_path: str = "fourthbrain-demo/model_trained_by_me2"
     class Config:
-        env_file = ".env"  # defaults to no prefix, i.e. ""
-
+        env_file = ".env"
 
 settings = Settings()
